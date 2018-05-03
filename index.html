@@ -18,38 +18,45 @@
   </head>
 
   <body>
-      <!-- TASK 1: In the div below. 
-        1. In a header tag, add a title.
-        2. In a paragraph tag, add instructions on how to play the game.
-        3. Add a RPS image.
-        4. Add input box and button .
-        5. Add divs to record User Choice and Computer Choice.
-        6. Add a div to record the Winner.
-     -->
-    <div class="container text-center">
+       <div class="container">
     
-    <h1> RPS</h1> 
-      <input placeholder="your choice" id ="user"><button id ="ubutton">Click Me</button>
-        <img href="https://i.imgur.com/fjo1wI9.gif">
-         <h2>You</h2>
-             <div id ="uchoice"> 
-           <img class="upic" src="http://waveavenue.com/wp-content/uploads/2011/10/21mag-abstractimages-slide-XOE4-jumbo.jpg">
-           <img class="upic" src="https://static01.nyt.com/images/2011/08/21/magazine/21mag-abstractimages-slide-2T4N/21mag-abstractimages-slide-2T4N-jumbo.jpg">
-           <img class="upic" src="https://static01.nyt.com/images/2011/08/21/magazine/21mag-abstractimages-slide-IRQ1/21mag-abstractimages-slide-IRQ1-jumbo.jpg">
+        <div class="row">  
             
-        <h2>Computer</h2>
-        <button>Click for Computer Choice</button>
-          <img src="http://waveavenue.com/wp-content/uploads/2011/10/21mag-abstractimages-slide-XOE4-jumbo.jpg">
-           <img src="https://static01.nyt.com/images/2011/08/21/magazine/21mag-abstractimages-slide-2T4N/21mag-abstractimages-slide-2T4N-jumbo.jpg">
-           <img src="https://static01.nyt.com/images/2011/08/21/magazine/21mag-abstractimages-slide-IRQ1/21mag-abstractimages-slide-IRQ1-jumbo.jpg">
-      <h3>A game of</h3><input>
-      <h2>Your Score</h2>
-      <h2>Computer Score</h2>
-      
-    </div>
-    
-    
+            <div class="col-md-4">     
+                <img class="rps-image" src="http://waveavenue.com/wp-content/uploads/2011/10/21mag-abstractimages-slide-XOE4-jumbo.jpg">
+                <img class="rps-image" src="https://static01.nyt.com/images/2011/08/21/magazine/21mag-abstractimages-slide-2T4N/21mag-abstractimages-slide-2T4N-jumbo.jpg">
+                <img class="rps-image" src="https://static01.nyt.com/images/2011/08/21/magazine/21mag-abstractimages-slide-IRQ1/21mag-abstractimages-slide-IRQ1-jumbo.jpg">
+            </div>
+            
+            <div  class="col-md-4">
+            <h3>Computer Chooses...</h3>
+            <h2 id="compChoice"></h2>
+            </div>
+            
+        </div>
+        
+        <div class="row">            
+            <div class="col-md-4" > 
+            <input><button>Enter</button>  
+            </div>     
+        </div>
+        
+        <div class="row">
+            <div class="col-md-4" >  
+                <p>Your Score:</p>
+                <p id="userscore"> 0</p>
+                <p>Computer Score:</p>
+                <p id="compscore">0</p>
+            </div> 
+        </div>
 
+        <div class="row">   
+            <div class="col-md-4" >
+                <h2 id="results"></h2>
+            </div>   
+        </div>
+        
+    </div>
   </body>
 
 </html>

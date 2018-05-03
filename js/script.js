@@ -1,73 +1,89 @@
 
 $( document ).ready(function() {
-        $("button").click(function() {
-                
-                var possibleAnswers = ["Rock", "Paper", "Scissors"];
-                var compAnswer = possibleAnswers[Math.floor(Math.random()*possibleAnswers.length)];
-                var getCompAns = document.innerHTML = compAnswer.toString();
-                $("#compChoice").html(getCompAns)
-                
-                var userInput = $("input").val();
-                var rockImg = "http://www.freepngimg.com/download/rock/7-2-rock-free-png-image.png"
-                var paperImg = "http://allfreedesigns.com/wp-content/uploads/2017/04/lined-paper-texture-4.jpg"
-                var scissorsImg = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Pair_of_scissors_with_black_handle%2C_2015-06-07.jpg/1200px-Pair_of_scissors_with_black_handle%2C_2015-06-07.jpg"
-                
-                
-                        if(userInput === "Rock") {
+         $( "button" ).click(function() {
+        var userInput = $("input").val();
+     
+        
+            var answers = ["rock","paper","scissors"];
 
-                                $("#userPhoto").attr("src", rockImg);
+            var compAnswer = answers[Math.floor(Math.random()*answers.length)];
 
-                                if (getCompAns === userInput) {
-                                        $("#compPhoto").attr("src", rockImg);
-                                        $("#results").html("Tie")
-                                }
-                                if (getCompAns === "Paper") {
-                                        $("#compPhoto").attr("src", paperImg);
-                                        $("#results").html("You lose")
-                                }
-                                if (getCompAns === "Scissors") {
-                                        $("#compPhoto").attr("src", scissorsImg);
-                                        $("#results").html("You win")      
-                                }
+            var getCompAnswer = document.innerHTML = compAnswer.toString();
+
+            $("#compChoice").html(getCompAnswer);
+    
+    
+    var score = $("#userscore");
+    var originalPoints = score.text();
+    console.log('originalPoints', originalPoints);
+    var newPoints = Number(originalPoints) + 1;
+    
+    
+    var score = $("#compscore");
+    var originalPoints2 = score.text();
+    console.log('originalPoints2', originalPoints2);
+    var newPoints2 = Number(originalPoints2) + 1;
+     
+     
+
+        if(userInput === "rock") {
+
+            if (getCompAnswer === userInput) {    
+                $("#results").html("Tie!");                     
+            }
                                 
-                        }
+            if (getCompAnswer === "paper") {              
+                $("#results").html("Computer Wins!");
+                $("#compscore").html(newPoints2);                   
+            }
                         
-                        if(userInput === "Paper") {
-                                $("#userPhoto").attr("src",paperImg);
-                                
-                                if (getCompAns === "Rock") {
-                                        $("#compPhoto").attr("src", rockImg);
-                                        $("#results").html("You win")      
-                                }
-                                if (getCompAns === userInput) {
-                                        $("#compPhoto").attr("src", paperImg);
-                                        $("#results").html("Tie")
-                                }
-                                if (getCompAns === "Scissors") {
-                                        $("#compPhoto").attr("src", scissorsImg);
-                                        $("#results").html("You lose")
-                                }
-                                
-                        }
-                        
-                         if(userInput === "Scissors") {
-                                $("#userPhoto").attr("src", scissorsImg);
+            if (getCompAnswer === "scissors") {                         
+                $("#results").html("You Win!");
+                $("#userscore").html(newPoints);  
+            }     
+                          
+        }
+            
+            
+        if(userInput === "scissors") {
 
-                                if (getCompAns === "Rock") {
-                                        $("#compPhoto").attr("src", rockImg);
-                                        $("#results").html("You lose")      
-                                }
-                                if (getCompAns === "Paper") {
-                                        $("#compPhoto").attr("src", paperImg);
-                                        $("#results").html("You win")
-                                }
-                                if (getCompAns === userInput) {
-                                        $("#compPhoto").attr("src", scissorsImg);
-                                        $("#results").html("Tie")
-                                }
+            if (getCompAnswer === userInput) { 
+                $("#results").html("Tie!");  
+            }
                                 
-                        }
-        });
+            if (getCompAnswer === "rock") {            
+                $("#results").html("Computer Wins");
+                $("#compscore").html(newPoints2);                   
+            }
+                        
+            if (getCompAnswer === "paper") {                         
+                $("#results").html("You Win!");
+                $("#userscore").html(newPoints);                  
+            }
+            
+        }
+        
+        
+        if(userInput === "paper") {
+
+            if (getCompAnswer === userInput) {         
+                $("#results").html("Tie!");
+            }
+                                
+            if (getCompAnswer === "rock") {                          
+                $("#results").html("You win!");
+                $("#userscore").html(newPoints);                               
+            }
+                        
+            if (getCompAnswer === "scissors") {                                        
+                $("#results").html("Computer Wins!");
+                $("#compscore").html(newPoints2);                                
+            }
+                          
+        }
+     
+     
+     });
 });
 
 
