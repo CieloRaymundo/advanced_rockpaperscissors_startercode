@@ -1,4 +1,4 @@
-body{
+.body{
     text-align:center;
     background-color:#e6e6e6;
     
@@ -8,6 +8,6 @@ body{
  height:150px;    
 }
 
-p{
+.p{
     font-size:20px;    
 }
